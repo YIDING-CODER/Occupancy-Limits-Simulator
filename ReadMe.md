@@ -102,7 +102,7 @@ BLOCKED_AREAS=[(4,2,5,10),(7,2,8,10),(10,2,11,10),(13,2,14,10)]
 - The unit of ```COUNT_FREQENCY``` and ```INCIDENT_THRESHOLD``` is ```seconds```
     -  ```COUNT_FREQENCY``` defines the frequency of generating the senario
     -  ```INCIDENT_THRESHOLD``` defines what is the distance incident.
-- The ```BLOCKED_AREA``` defines the restricted area on the map. Each block is defined by it's ```gird  position``` (```left_bottom_x```,```left_bottom_y```,```right_top_x```,```right_top_y```) .
+- The ```BLOCKED_AREA``` defines the restricted area on the map. Each block is defined by it's ```gird  position``` (```left_bottom_x```,```left_bottom_y```,```right_top_x```,```right_top_y```). If no blocked areas, please use value ```[]```.
 
 
 ## Developer Notes
