@@ -1,7 +1,7 @@
 import os
 import random
 from PIL import Image, ImageOps
-
+from glob import glob
 
 def concat_images(image_paths, size, shape=None):
     # Open images and resize them
@@ -25,9 +25,14 @@ def concat_images(image_paths, size, shape=None):
     return image
 
 
+
+print("Available folders are:")
+folders=glob("data/*")
+folder_list=[folder.split("/")[1] for folder in folders]
+for folder in folder_list:
+    print(folder)
+    
 time_stamp=input("Please type the timestamp folder name:")
-
-
 row=int(input("# of Grid Rows:"))
 col=int(input("# of Grid Cols:"))
 start_scenario=int(input("Start Scenario:"))
@@ -43,6 +48,6 @@ while image_num<start_scenario+row*col:
 
 # Create and save image grid
 image = concat_images(image_array, (554, 436), (row, col))
-save_location="data/"+time_stamp+"/grid.jpg"
+save_location="data/"+time_stamp+"/grid{}_{}.jpg".format(str(row),str(col))
 print("Image saved at: "+ save_location)
 image.save(save_location, 'JPEG')
